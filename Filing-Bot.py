@@ -22,7 +22,7 @@ os.chdir(r'' + currentdir)
 
 #***************************************#
 
-@client.command()
+@client.command(name='randompicture', aliases=['RandomPic', 'Pic'], help='Gives you a random picture. Allows the use of tags sperated by spaces as arguments.')
 async def randompic(ctx, *args):
 	if str(args) == "()":
 		tags = ""
@@ -33,7 +33,7 @@ async def randompic(ctx, *args):
 
 	await RandomPick(ctx, tags)
 
-@client.command()
+@client.command(name='addtag', aliases=['AddTag', 'Add'], help='Adds certain tags to the last photo you called.')
 async def addtag(ctx, *args):
 	if ctx.message.author.id == ownerid:
 		tags = list(args)
@@ -41,7 +41,7 @@ async def addtag(ctx, *args):
 			tags[i] = tags[i].lower()
 		await addtag(ctx, tags)
 
-@client.command()
+@client.command(name='removetag', aliases=['RemoveTag', 'remove'], help='Removes certain tags of the last photo you called.')
 async def removetag(ctx, *args):
 	if ctx.message.author.id == ownerid:
 		tags = list(args)
@@ -49,12 +49,16 @@ async def removetag(ctx, *args):
 			tags[i] = tags[i].lower()
 		await removetags(ctx, tags)
 
-@client.command()
+@client.command(name='picture', aliases=['pic', 'PIcture'], help='Shows you the picture and allows you to use addtag and removetag on it.')
 async def pic(ctx, *args):
 	tags = list(args)
 	await searches(ctx, tags)
-
-@client.command()
+	
+@client.command(name='search', aliases=['Search', 'Se'], help='Allows you to search for an image by it\'s file name.')
+async def search(ctx, args):
+	await searching(ctx, args):
+		
+@client.command(name='refresh', aliases=['Refresh', 'Re'], help='Allows you to refresh the images in the storage and cull ones you don\'t have anymore.')
 async def refresh(ctx):
 	if ctx.message.author.id == ownerid:
 		await update_pictures()
