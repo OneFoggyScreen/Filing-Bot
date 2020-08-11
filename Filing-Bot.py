@@ -56,7 +56,7 @@ async def pic(ctx, *args):
 	
 @client.command(name='search', aliases=['Search', 'Se'], help='Allows you to search for an image by it\'s file name.')
 async def search(ctx, args):
-	await searching(ctx, args):
+	await searching(ctx, args)
 		
 @client.command(name='refresh', aliases=['Refresh', 'Re'], help='Allows you to refresh the images in the storage and cull ones you don\'t have anymore.')
 async def refresh(ctx):
@@ -301,4 +301,4 @@ async def on_ready():
 
 #Runs the bot
 client.run(TOKEN.read())
-#
+
