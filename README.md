@@ -1,5 +1,5 @@
 # Filing-Bot
-A discord bot that sorts photos. 
+A discord bot that sorts photos, videos, and GIFs. 
 It can add and remove tags, in addition to being able to search with those tags.
 
 # Setup PT.1
