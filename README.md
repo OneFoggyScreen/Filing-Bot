@@ -8,7 +8,7 @@ Then you'll need to install python 3.8.5 which can be found here [https://www.py
 After you install it, you'll have to satisfy the dependencies of the bot by installing discord with the command ``pip install discord``
 
 # Setup PT.2
-Once you've gotten python all setup you can clone the bot and put it where you'd like. Next, you have to put your discord bot token in the ``TOKEN.txt`` file, copy the directory that the script is in and paste it into ``currentdir`` variable. While you're there you can mess with the other settings. Once you're ready to put the photos, gifs, and videos, you should make a folder called ``Items`` and put it in the same folder as the bot. After that, it should be ready and you can start the script!
+Once you've gotten python all setup you can clone the bot and put it where you'd like. Next, you have to put your discord bot token in the ``TOKEN.txt`` file. Next, make sure to change the settings in ``Filing-Bot.py``. Once you're ready to put the photos, gifs, and videos, you should make a folder called ``Items`` and put it in the same folder as the bot. After that, it should be ready. You can now run the script!
 
 # Problems
-If you have any problems with the bot, message me on discord at Lemon#7512.
+If you have any problems with the bot, start an issue thread

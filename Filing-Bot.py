@@ -1,5 +1,4 @@
 #Importing Libaries
-
 #***************************************#
 
 import discord, os, datetime as DT, json, random, collections
@@ -9,10 +8,11 @@ from discord.ext import commands
 #***************************************#
 
 ownerid =  #To get your id, all you have to do is right click your profile in a server or dm and copy Id
-currentdir = '' #Chnage this directory to where the everything is being stored Make sure \ are /!
-color = 0x0E5476 #Change to whatever you want the embed colors to be
-customstat = "Test" #Change to whatever you want the custom status to be
-prefix = '!' #Changes this to whatever you want the bot prefix to be
+currentdir = os.getcwd()
+color =  #Change to whatever you want the embed colors to be, has to be html
+customstat = "" #Change to whatever you want the custom status to be
+prefix = '' #Changes this to whatever you want the bot prefix to be
+embedtitle = "" #This is where your embed title goes
 
 #Basic bot setup
 #***************************************#
@@ -98,7 +98,7 @@ async def RandomPick(ctx, args):
 		pics = list(itemstore)
 		randomp = random.choice(pics)
 		tags = fetchtagsclean(randomp)
-		embed = discord.Embed(title="Cute Dog Picute", color=color)
+		embed = discord.Embed(title=embedtitle, color=color)
 		embed.add_field(name="Tags", value=str(tags), inline=False)
 		embed.set_image(url="attachment://" + str(randomp))
 		image = discord.File(str(currentdir) + "/Items/" + str(randomp))
@@ -117,7 +117,7 @@ async def RandomPick(ctx, args):
 			await ctx.send("We couldn't find any posts with those tag(s)")
 		randomp = random.choice(masterpics)
 		tags = fetchtagsclean(randomp)
-		embed = discord.Embed(title="Cute Dog Picute", color=color)
+		embed = discord.Embed(title=embedtitle, color=color)
 		embed.add_field(name="Tags", value=str(tags), inline=False)
 		embed.set_image(url="attachment://" + str(randomp))
 		image = discord.File(str(currentdir) + "/Items/" + str(randomp))
@@ -139,7 +139,7 @@ async def searches(ctx, args):
 	templist = list(leaders)
 	templist = templist[0]
 	tags = fetchtagsclean(templist)
-	embed = discord.Embed(title="Cute Dog Picute", color=0x0E5476)
+	embed = discord.Embed(title=embedtitle, color=0x0E5476)
 	embed.add_field(name="Tags", value=str(tags), inline=False)
 	embed.set_image(url="attachment://" + str(templist))
 	image = discord.File(str(currentdir) + "/Items/" + str(templist))
